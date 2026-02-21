@@ -1,0 +1,23 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "flowagent"
+version = "0.1.0"
+description = "State-Gated Agentic Workflow Framework"
+requires-python = ">=3.11"
+dependencies = [
+    "pydantic>=2.0",
+]
+
+[project.optional-dependencies]
+anthropic = ["anthropic>=0.40"]
+openai = ["openai>=1.50"]
+azure = ["openai>=1.50"]
+litellm = ["litellm>=1.50"]
+redis = ["redis>=5.0"]
+sql = ["sqlalchemy>=2.0", "alembic>=1.13"]
+viz = ["graphviz>=0.20"]
+all = ["flowagent[anthropic,openai,redis,sql,viz]"]
+dev = ["pytest>=8.0", "pytest-asyncio>=0.24"]
