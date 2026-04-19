@@ -210,7 +210,11 @@ flowagent/
 
 ## Status
 
-Draft — ready for implementation. See `flow_agent_spec.md` for the full specification (v1.0) including architecture diagrams, execution semantics, validation rules, and the phased implementation plan.
+Draft — ready for implementation.
+
+- [`docs/spec.md`](docs/spec.md) — full specification v1.0 (architecture, execution semantics, validation rules).
+- [`docs/phased-plan.md`](docs/phased-plan.md) — phase-by-phase deliverables and acceptance criteria.
+- [`docs/linkedin-article.md`](docs/linkedin-article.md) — narrative overview.
 
 | Phase | Scope                                              |
 | ----- | -------------------------------------------------- |
