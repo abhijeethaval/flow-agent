@@ -1,5 +1,7 @@
 """FlowAgent: State-Gated Agentic Workflow Framework."""
 
+from flowagent.adapters import LLMAdapter
+from flowagent.engine import WorkflowEngine
 from flowagent.errors import (
     CheckpointError,
     CheckpointLoadError,
@@ -18,7 +20,14 @@ from flowagent.errors import (
     ToolNotAllowedError,
     WorkflowValidationError,
 )
+from flowagent.state_executor import StateExecutor
+from flowagent.state_store import StateStore, StateStoreSnapshot
 from flowagent.tool import ToolDef, tool
+from flowagent.transition import (
+    TRANSITION_TOOL_NAME,
+    TransitionParams,
+    make_transition_tool,
+)
 from flowagent.types import (
     Checkpoint,
     ErrorPolicy,
@@ -44,6 +53,13 @@ __all__ = [
     # Tool
     "ToolDef",
     "tool",
+    # State store
+    "StateStore",
+    "StateStoreSnapshot",
+    # Transition
+    "TRANSITION_TOOL_NAME",
+    "TransitionParams",
+    "make_transition_tool",
     # LLM types
     "ToolCall",
     "ToolResult",
@@ -52,6 +68,10 @@ __all__ = [
     "ToolCallRecord",
     "StateExecutionResult",
     "WorkflowExecutionResult",
+    # Runtime
+    "LLMAdapter",
+    "StateExecutor",
+    "WorkflowEngine",
     # Config
     "ErrorPolicy",
     "Checkpoint",
